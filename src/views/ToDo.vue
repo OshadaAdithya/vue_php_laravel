@@ -93,22 +93,7 @@ export default {
         onMounted(fetchRecords);
 
         const submitTask=async ()=>{
-           
-           /*if (task_item.value.trim() === '') {
-            // If the task_item is empty or contains only spaces
-            showWarning.value = true; // Show the warning message
-            }
-            else{
-                
-                tasks.value.push({
-                    id: tasks.value.length + 1,
-                    name:task_item.value,
-                    status:'',
-                    editing:false
-                })
-                task_item.value=''
-                showWarning.value=false
-            }*/
+          
 
             try {
                 if (task_item.value.trim() === ''){
@@ -200,10 +185,7 @@ export default {
         }
 
         const deleteTask =async (todo) => {
-        /*const index = tasks.value.indexOf(todo);
-        if (index !== -1) {
-            tasks.value.splice(index, 1);
-        }*/
+        
         try {
             const id = todo.id
             const response= await fetch("http://127.0.0.1:8000/api/deleteItem/"+id,{
